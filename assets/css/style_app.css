@@ -1052,13 +1052,13 @@ button:disabled:hover::before {
   border: 1px solid rgba(255, 255, 255, 0.95);
 }
 
-.insights-card::before {
+/* .insights-card::before {
   background: linear-gradient(
     to right,
     var(--accent-mint),
     var(--accent-dark-mint)
   );
-}
+} */
 
 #insights-content {
   padding: 1rem 0;
@@ -1096,8 +1096,8 @@ button:disabled:hover::before {
 .insights-card::before {
   background: linear-gradient(
     to right,
-    var(--accent-mint),
-    var(--accent-dark-mint)
+    var(--accent-lilac),
+    var(--accent-lavender)
   );
 }
 
@@ -1185,7 +1185,7 @@ button:disabled:hover::before {
 /* ============ MINITARJETAS DE ESTADO ============ */
 
 /* Consejo destacado */
-.featured-insight {
+/* .featured-insight {
   grid-column: span 2;
   background: linear-gradient(
     135deg,
@@ -1199,7 +1199,7 @@ button:disabled:hover::before {
   gap: 1.5rem;
   position: relative;
   overflow: hidden;
-}
+} */
 
 .featured-insight h3 {
   color: var(--accent-lavender);
@@ -1214,7 +1214,6 @@ button:disabled:hover::before {
   right: 20px;
   bottom: 10px;
 }
-*/
 
 /* ============ INSIGHTS COMPLETOS ============ */
 .insights-grid {
@@ -1351,10 +1350,10 @@ button:disabled:hover::before {
 }
 
 /* Estadísticas con estilo diferente */
-.stats-card {
-  border-left-color: var(--accent-mint);
+/* .stats-card {
+  border-left-color: var(--accent-lavender);
 }
-
+ */
 /* Responsive */
 @media (max-width: 900px) {
   .cycle-status-grid {
@@ -1380,6 +1379,7 @@ button:disabled:hover::before {
 /* ==================????? */
 
 /* ============ ESTADO DEL CICLO - PREDICCIONES ============ */
+
 .cycle-status-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1402,7 +1402,7 @@ button:disabled:hover::before {
   border: none;
 }
 
-/* Nuevo borde superior en lugar de lateral */
+/* Gradiente lila para todas las barras superiores */
 .status-card::before {
   content: "";
   position: absolute;
@@ -1410,30 +1410,15 @@ button:disabled:hover::before {
   left: 0;
   right: 0;
   height: 5px;
-  /* background: var(--accent-lavender); */
+  background: linear-gradient(
+    to right,
+    var(--accent-lilac),
+    var(--accent-dark-mint)
+  );
   border-radius: var(--card-radius) var(--card-radius) 0 0;
 }
 
-/* /* Colores diferentes para cada tarjeta */
-.card-period::before {
-  background: var(--accent-mint);
-}
-.card-phase::before {
-  background: var(--accent-mint);
-}
-.card-fertility::before {
-  background: var(--accent-mint);
-}
-.card-ovulation::before {
-  background: var(--accent-mint);
-}
-.card-duration::before {
-  background: var(--accent-mint);
-}
-.card-last-period::before {
-  background: var(--accent-mint);
-}
-*/ .status-header {
+.status-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1486,7 +1471,6 @@ button:disabled:hover::before {
   margin-top: 0.5rem;
 }
 
-/* Efecto hover más sutil */
 .status-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
@@ -1500,17 +1484,9 @@ button:disabled:hover::before {
   text-align: center;
 }
 
-.insights-card::before {
-  background: linear-gradient(
-    to right,
-    var(--accent-mint),
-    var(--accent-dark-mint)
-  );
-}
-
 .insights-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   gap: 1.8rem;
   margin-top: 1rem;
 }
@@ -1530,6 +1506,7 @@ button:disabled:hover::before {
   overflow: hidden;
 }
 
+/* Gradiente lila para todas las barras superiores */
 .insight-card::before {
   content: "";
   position: absolute;
@@ -1537,12 +1514,12 @@ button:disabled:hover::before {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--accent-lavender);
+  background: linear-gradient(
+    to right,
+    var(--accent-lilac),
+    var(--accent-dark-mint)
+  );
   border-radius: var(--card-radius) var(--card-radius) 0 0;
-}
-
-.insight-card.important::before {
-  background: var(--accent-pink);
 }
 
 .insight-title {
@@ -1592,7 +1569,6 @@ button:disabled:hover::before {
   font-size: 1.2rem;
 }
 
-/* Efecto hover más sutil */
 .insight-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
@@ -1603,14 +1579,14 @@ button:disabled:hover::before {
   .cycle-status-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .insights-grid {
+    grid-template-columns: 1fr; /* 1 columna en tablet */
+  }
 }
 
 @media (max-width: 600px) {
   .cycle-status-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .insights-grid {
     grid-template-columns: 1fr;
   }
 }
