@@ -45,13 +45,13 @@ function showAuthenticatedState() {
 
   // Actualizar el saludo en el header
   const titulo = document.querySelector("header h1");
-  titulo.innerHTML = `<span class="icon"><img src="./assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola ${storedUserName}! ¿Cómo te sentís hoy?`;
+  titulo.innerHTML = `<span class="icon"><img src="../assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola ${storedUserName}! ¿Cómo te sentís hoy?`;
 }
 
 // Función para mostrar estado no autenticado
 function showUnauthenticatedState() {
   authModal.classList.add("active");
-  greetingText.innerHTML = `<span class="icon"><img src="./assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola! ¿Cómo te sentís hoy?`;
+  greetingText.innerHTML = `<span class="icon"><img src="../assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola! ¿Cómo te sentís hoy?`;
 }
 
 // ======================= MENÚ DE USUARIa =======================
@@ -362,7 +362,7 @@ async function fetchPredictions() {
     if (cont) {
       cont.innerHTML = `
         <div class="notice-msg">
-          <img src="./assets/img/alerta.png" alt="Alerta" class="icon-img">
+          <img src="../assets/img/alerta.png" alt="Alerta" class="icon-img">
           <h3>Tenés que cargar al menos dos ciclos consecutivos</h3>
           <p>Registrá tus ciclos para poder ver tus estadísticas y predicciones</p>
         </div>
@@ -417,7 +417,7 @@ function showPredictions(data) {
     <div class="status-card card-period">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/prob_prox_ciclo.png" alt="Próximo período">
+          <img src="../assets/img/prob_prox_ciclo.png" alt="Próximo período">
         </div>
         <div class="status-title">Próximo período</div>
       </div>
@@ -439,7 +439,7 @@ function showPredictions(data) {
     <div class="status-card card-phase">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/fase_actual.png" alt="Fase actual">
+          <img src="../assets/img/fase_actual.png" alt="Fase actual">
         </div>
         <div class="status-title">Fase actual</div>
       </div>
@@ -455,7 +455,7 @@ function showPredictions(data) {
 <div class="status-card card-fertility">
   <div class="status-header">
     <div class="status-icon">
-      <img src="./assets/img/prob_fertilidad.png" alt="Fertilidad">
+      <img src="../assets/img/prob_fertilidad.png" alt="Fertilidad">
     </div>
     <div class="status-title">Fertilidad</div>
   </div>
@@ -478,7 +478,7 @@ function showPredictions(data) {
 <div class="status-card card-ovulation">
   <div class="status-header">
     <div class="status-icon">
-      <img src="./assets/img/ovulacion.png" alt="Ovulación">
+      <img src="../assets/img/ovulacion.png" alt="Ovulación">
     </div>
     <div class="status-title">Ovulación</div>
   </div>
@@ -498,7 +498,7 @@ function showPredictions(data) {
     <div class="status-card card-duration">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/reloj.png" alt="Duración promedio">
+          <img src="../assets/img/reloj.png" alt="Duración promedio">
         </div>
         <div class="status-title">Duración promedio</div>
       </div>
@@ -514,7 +514,7 @@ function showPredictions(data) {
     <div class="status-card card-last-period">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/ultimo_periodo.png" alt="Último período">
+          <img src="../assets/img/ultimo_periodo.png" alt="Último período">
         </div>
         <div class="status-title">Último período</div>
       </div>
@@ -557,7 +557,7 @@ function showPredictions(data) {
     insightsCont.innerHTML = `
       <div class="insight-card important">
         <div class="insight-title">
-          <img src="./assets/img/corazon_lavender.png" alt="Síntomas físicos" class="icon-img">
+          <img src="../assets/img/corazon_lavender.png" alt="Síntomas físicos" class="icon-img">
           <h3>Consejo de bienestar</h3>
         </div>
         <div class="insight-content">
@@ -567,7 +567,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <img src="./assets/img/fugaz.png" alt="Síntomas físicos" class="icon-img">
+          <img src="../assets/img/fugaz.png" alt="Síntomas físicos" class="icon-img">
           <h3>Tu estado emocional</h3>
         </div>
         <div class="insight-content">
@@ -582,7 +582,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <img src="./assets/img/sintomas_fisicos.png" alt="Síntomas físicos" class="icon-img">
+          <img src="../assets/img/sintomas_fisicos.png" alt="Síntomas físicos" class="icon-img">
           <h3>Síntomas físicos que podés experimentar</h3>
         </div>
         <div class="insight-content">
@@ -594,7 +594,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <img src="./assets/img/recomendaciones.png" alt="Síntomas físicos" class="icon-img">
+          <img src="../assets/img/recomendaciones.png" alt="Síntomas físicos" class="icon-img">
           <h3>Estas recomendaciones pueden ayudarte</h3>
         </div>
         <div class="insight-content">
