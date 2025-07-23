@@ -18,7 +18,16 @@ El principal objetivo es facilitar el acceso a los recursos de salud de forma si
 
 ## 💻 Tecnologías utilizadas
 
-- HTML5 + CSS (responsive)
+- HTML5
+- CSS3 (responsive)
+- Flexbox/Grid
+- Media Queries
+- JavaScript ES6+
+- LocalStorage
+- Fetch API
+- JSON
+- Leaflet.js (Mapas interactivos centros de salud)
+- API App Ciclos
 - Visual Studio Code
 
 ---
