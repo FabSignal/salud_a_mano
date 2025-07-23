@@ -1300,10 +1300,10 @@ button:disabled:hover::before {
 }
 
 .status-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(124, 82, 149, 0.1);
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1311,9 +1311,10 @@ button:disabled:hover::before {
 }
 
 .status-icon img {
-  width: 24px;
-  height: 24px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .status-title {
@@ -1424,23 +1425,6 @@ button:disabled:hover::before {
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
-}
-
-.status-icon {
-  width: 50px;
-  height: 50px;
-  background: rgba(124, 82, 149, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.status-icon img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
 }
 
 .status-title {
