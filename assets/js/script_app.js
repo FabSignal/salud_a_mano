@@ -349,10 +349,24 @@ async function fetchPredictions() {
   // Más sencillo: contar los ciclos reales subidos
   const realesCount = ciclos.filter((c) => c.synced === true).length;
 
-  if (realesCount < 2) {
+  /* if (realesCount < 2) {
     const cont = document.getElementById("predictions-container");
     if (cont) {
       cont.innerHTML = `<div class="notice-msg">Necesitás al menos dos ciclos registrados para obtener predicciones.</div>`;
+    }
+    return;
+  } */
+
+  if (realesCount < 2) {
+    const cont = document.getElementById("predictions-stats-container");
+    if (cont) {
+      cont.innerHTML = `
+        <div class="notice-msg">
+          <img src="./assets/img/alerta.png" alt="Alerta" class="icon-img">
+          <h3>Tenés que cargar al menos dos ciclos consecutivos</h3>
+          <p>Registrá tus ciclos para poder ver tus estadísticas y predicciones</p>
+        </div>
+      `;
     }
     return;
   }
@@ -403,7 +417,7 @@ function showPredictions(data) {
     <div class="status-card card-period">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/calendario.png" alt="Próximo período">
+          <img src="./assets/img/prob_prox_ciclo.png" alt="Próximo período">
         </div>
         <div class="status-title">Próximo período</div>
       </div>
@@ -441,7 +455,7 @@ function showPredictions(data) {
 <div class="status-card card-fertility">
   <div class="status-header">
     <div class="status-icon">
-      <img src="./assets/img/fertilidad.png" alt="Fertilidad">
+      <img src="./assets/img/prob_fertilidad.png" alt="Fertilidad">
     </div>
     <div class="status-title">Fertilidad</div>
   </div>
@@ -484,7 +498,7 @@ function showPredictions(data) {
     <div class="status-card card-duration">
       <div class="status-header">
         <div class="status-icon">
-          <img src="./assets/img/duracion_promedio.png" alt="Duración promedio">
+          <img src="./assets/img/reloj.png" alt="Duración promedio">
         </div>
         <div class="status-title">Duración promedio</div>
       </div>
@@ -511,21 +525,6 @@ function showPredictions(data) {
       </div>
     </div>
   `;
-
-  // Funciones de mensajes
-
-  /* function getFertilityMessage(level, fallbackMsg) {
-    const messages = {
-      baja: "Baja probabilidad de embarazo",
-      moderada: "Posibilidades moderadas de embarazo",
-      alta: "Alta probabilidad de embarazo",
-    };
-    return (
-      fallbackMsg ||
-      messages[level.toLowerCase()] ||
-      "Estado de fertilidad actual"
-    );
-  } */
 
   function getFertilityMessage(level, fallbackMsg) {
     const map = {
@@ -558,7 +557,7 @@ function showPredictions(data) {
     insightsCont.innerHTML = `
       <div class="insight-card important">
         <div class="insight-title">
-          <i class="fas fa-heart"></i>
+          <img src="./assets/img/corazon_lavender.png" alt="Síntomas físicos" class="icon-img">
           <h3>Consejo de bienestar</h3>
         </div>
         <div class="insight-content">
@@ -568,7 +567,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <i class="fas fa-brain"></i>
+          <img src="./assets/img/fugaz.png" alt="Síntomas físicos" class="icon-img">
           <h3>Tu estado emocional</h3>
         </div>
         <div class="insight-content">
@@ -583,7 +582,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <i class="fas fa-body"></i>
+          <img src="./assets/img/sintomas_fisicos.png" alt="Síntomas físicos" class="icon-img">
           <h3>Síntomas físicos que podés experimentar</h3>
         </div>
         <div class="insight-content">
@@ -595,7 +594,7 @@ function showPredictions(data) {
       
       <div class="insight-card">
         <div class="insight-title">
-          <i class="fas fa-lightbulb"></i>
+          <img src="./assets/img/recomendaciones.png" alt="Síntomas físicos" class="icon-img">
           <h3>Estas recomendaciones pueden ayudarte</h3>
         </div>
         <div class="insight-content">
