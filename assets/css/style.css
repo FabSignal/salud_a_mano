@@ -38,7 +38,6 @@ body {
 }
 
 .container {
-  max-width: 1300px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -58,15 +57,14 @@ header {
   position: sticky;
   top: 0;
   background: var(--secondary-light);
-  border: 2px solid var(--secondary-dark);
+  border: 2px solid var(light);
   border-radius: 2.5rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 45px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   margin: 1rem auto 2rem;
-  max-width: 1300px;
+  max-width: 2000px;
   width: 95%;
   height: 85px;
-  /*  min-height: 85px;  */
   padding: 0;
 }
 
@@ -114,14 +112,16 @@ header {
 .nav-links a {
   color: var(--primary-dark);
   text-decoration: none;
-  font-weight: bold;
   transition: color 0.3s;
   padding: 0.3rem 0.8rem;
   font-size: 1.1rem;
+  transition: 0.1s ease-in-out;
 }
 
 .nav-links a:hover {
-  color: var(--accent-lavender);
+  background-color: var(--neutral-light);
+  border-radius: 30px;
+  color: var(--primary-dark);
 }
 
 /* Menú hamburguesa */
@@ -157,16 +157,6 @@ header {
   position: relative;
   z-index: 0;
 }
-
-/* .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, var(--accent-mint), var(--accent-lavender));
-  filter: blur(60px);
-  opacity: 0.4;
-  z-index: -1;
-} */
 
 .hero h2 {
   margin-top: 5.5rem;
@@ -244,38 +234,24 @@ header {
 
 .secciones {
   display: block;
-  max-width: 1300px;
-  width: 95%;
+
   margin: 0 auto 2rem;
   padding: 1.5rem 0;
 }
 
-.seccion-1 {
-  background-color: var(--secondary-light);
-  padding: 1.5rem 0;
-}
-
-.seccion-2 {
-  background-color: var(--secondary-light);
-  padding: 1.5rem 0;
-}
-
-.seccion-3 {
-  background-color: var(--secondary-light);
-  padding: 1.5rem 0;
-}
-
+.seccion-1,
+.seccion-2,
+.seccion-3,
 .seccion-4 {
   background-color: var(--secondary-light);
   padding: 1.5rem 0;
 }
 
 .container-card {
-  max-width: 1400px;
+  max-width: 900px;
   width: 90%;
   margin: 0 auto;
   padding: 0 2rem;
-  box-sizing: border-box;
 }
 
 .card {
@@ -310,23 +286,6 @@ header {
 }
 
 /* Animación de flotación para las imágenes */
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  25% {
-    transform: translateY(-10px) scale(1.1);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.2);
-  }
-  75% {
-    transform: translateY(-10px) scale(1.1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
 
 /*Hover de las tarjetas*/
 .card-1:hover {
@@ -361,6 +320,14 @@ header {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+.card-5:hover {
+  transform: translateY(-5px) scale(1.02);
+  background-color: var(--secondary-light);
+  color: var(--primary-dark);
+  border-color: var(--accent-lavender);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 .card h3 {
   color: var(--primary-dark);
   font-size: 1.8rem;
@@ -379,70 +346,69 @@ header {
 .card a {
   display: inline-block;
   margin-top: 1rem;
-  background-color: var(--accent-lavender);
+  background-color: var(--neutral-medium);
   color: var(--primary-light);
   padding: 0.75rem 1.5rem;
   border-radius: 30px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 /* Colores y características específicas para cada tarjeta */
-.card-1 {
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
   width: 100%; /* Ocupará el 100% del container-card */
   max-width: none;
 }
 
-.card-1 a {
-  background-color: var(--accent-dark-mint);
-  color: var(--dark-brown);
-}
-
-.card-1 a:hover {
-  background-color: var(--neutral-medium); /*Color del hover del botón*/
+.card a:hover {
+  background-color: var(--accent-orange); /*Color del hover del botón*/
   border-color: var(--accent-blue);
-  color: var(--primary-dark); /*Color de la letra del botón*/
+  color: var(--primary-light); /*Color de la letra del botón*/
 }
 
-.card-2 {
-  width: 100%;
-  max-width: none;
+/* Estilos para la nueva tarjeta */
+.card-5 {
+  position: relative;
+  border-color: var(--accent-lilac);
 }
 
-.card-2 a {
-  background-color: var(--beige-medium);
-  color: var(--primary-light);
+.card-5 a {
+  background-color: var(--accent-lilac);
 }
 
-.card-2 a:hover {
-  background-color: var(--accent-lavender);
+.card-5 a:hover {
+  background-color: var(--accent-pink);
+}
+/* Badge de nueva función */
+.nueva-funcion-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent-pink);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transform: rotate(5deg);
+  transition: all 0.3s ease;
 }
 
-.card-3 {
-  width: 100%;
-  max-width: none;
+.card-5:hover .nueva-funcion-badge {
+  transform: rotate(0) scale(1.1);
+  background-color: var(--accent-coral);
 }
 
-.card-3 a {
-  background-color: var(--accent-lavender);
-  color: var(--primary-light);
+/* Ajustes para las imágenes (sin animaciones de flotación) */
+.imagen-tarjeta img {
+  transition: transform 0.3s ease;
 }
 
-.card-3 a:hover {
-  background-color: var(--accent-orange);
-}
-
-.card-4 {
-  width: 100%;
-  max-width: none;
-}
-
-.card-4 a {
-  background-color: var(--accent-lavender);
-  color: var(--primary-light);
-}
-
-.card-4 a:hover {
-  background-color: var(--accent-orange);
+.card:hover .imagen-tarjeta img {
+  transform: scale(1.1);
 }
 
 /* Footer */
@@ -517,288 +483,366 @@ footer {
 }
 
 /* ===================Estilos para la sección Contacto=====================*/
+/* Estilos para el formulario mejorado */
 .contacto {
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   flex-direction: column;
-  margin-top: 1.8%;
-}
-
-.contacto .title {
-  font-size: 2rem;
-  color: var(--primary-dark);
-  text-align: left;
+  padding: 2rem 0;
 }
 
 .formulario-contacto {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.08);
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem 2.5rem;
-  text-align: justify;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
 }
+
 .formulario-contacto form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
-.formulario-contacto label {
+
+/* Estilo de tarjeta para los campos del formulario */
+.tag-form {
+  background-color: var(--secondary-light);
+  border: 2px solid var(--accent-mint);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.tag-form:hover {
+  border-color: var(--accent-lavender);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tag-form label {
+  display: block;
   color: var(--text-secondary);
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 0.5rem;
 }
-.formulario-contacto .input,
-.formulario-contacto textarea,
-.formulario-contacto select {
+
+.tag-form .input,
+.tag-form textarea,
+.tag-form select {
+  width: 95%;
   font-family: "Inter", sans-serif;
-  border: 1px solid #cfd8dc;
-  border-radius: 20px;
-  padding: 0.7em 1em;
+  border: 1px solid var(--neutral-medium);
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
-  background: #f9f9f9;
+  background: var(--primary-light);
   color: var(--primary-medium);
-  border-bottom: #b6a49b 2px solid;
-}
-.formulario-contacto .input:focus,
-.formulario-contacto textarea:focus,
-.formulario-contacto select:focus {
-  outline: 2px solid #ffb1ee;
-  background: #fff;
+  transition: all 0.3s ease;
 }
 
-.input:hover {
-  background-color: #fdf7f5;
-  border: 2px solid var(--neutral-medium);
-  transition: border 0.2s;
+.tag-form .input:focus,
+.tag-form textarea:focus,
+.tag-form select:focus {
+  outline: 2px solid var(--accent-lavender);
+  border-color: transparent;
 }
 
-.option:hover {
-  background-color: var(--neutral-medium);
-  transition: background-color 0.3s;
+.tag-form textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
-.formulario-contacto .botones {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  margin-top: 1rem;
+/* Estilo para selects múltiples */
+select[multiple] {
+  height: auto;
+  min-height: 100px;
 }
-.formulario-contacto .button {
-  background: #b38f7e;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
+
+select[multiple] option {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0.2rem 0;
 }
-.formulario-contacto .button:hover {
-  background: #ff8e59;
+
+select[multiple] option:hover {
+  background-color: var(--accent-mint);
 }
+
+select[multiple] option:checked {
+  background-color: var(--accent-lavender);
+  color: white;
+}
+
+/* Consentimiento */
 .consentimiento {
-  font-size: 0.95em;
-  color: #274167;
-  margin-top: 0.5em;
-  margin-bottom: 0.2em;
-  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
-  gap: 0.5em;
-}
-@media (max-width: 650px) {
-  .formulario-contacto {
-    padding: 1.2rem 0.7rem;
-  }
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
-/*
-.formulario-contacto {
-  width: 70%;
-  height: 50%;
-  font-size: 1.5rem;
-  margin-top: 2%;
-  margin-left: 4%;
-  margin-right: 4%;
-  padding: 1%;
-  text-align: justify;
-  border-bottom: --primary-dark 1px solid;
-  line-height: 2rem;
+.consentimiento input[type="checkbox"] {
+  margin-top: 0.9rem;
+  transform: scale(1.2);
 }
 
-label {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: var(--primary-medium);
-  margin-top: 1.5%;
-  display: inline-block;
-}
-
-.input {
-  width: 100%;
-  font-size: 1rem;
-  padding: 10px;
-  margin-bottom: 1.5%;
-  border-radius: 30px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: var(--primary-dark) 2.5px solid;
-  background-color: transparent;
-  color: var(--primary-medium);
-}
-
-.input:hover {
-  border-color: var(--neutral-medium);
-  transition: background-color 0.3s;
-}
-
-.option:hover {
-  background-color: var(--neutral-medium);
-  transition: background-color 0.3s;
-}
-
-.consentimiento {
-  font-size: 1rem;
-  text-align: center;
-}
-
-.button {
-  background-color: var(--beige-dark);
-  color: var(--primary-light);
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  margin-top: 2%;
-}
-
+/* Botones centrados */
 .botones {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 4%;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  background-color: var(--neutral-medium);
+  color: var(--primary-light);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
-  background-color: var(--neutral-medium);
-  transition: 0.3s ease;
+  background-color: var(--accent-orange);
+  transform: translateY(-2px);
 }
-*/
+
+.button[type="reset"] {
+  background-color: var(--neutral-medium);
+}
+
+.button[type="reset"]:hover {
+  background-color: var(--accent-orange);
+}
 
 /* ==================Estilos para la sección de Guardia================= */
-.guardia {
-  max-width: 80%;
-  margin: auto;
-}
-
-.guardia h2 {
-  font-size: 2rem;
-  color: var(--primary-dark);
-  text-align: center;
-  margin-top: 2%;
-}
-
-.guardia p {
-  font-size: 1.2rem;
-  color: var(--primary-medium);
-  text-align: center;
-  margin-top: 2%;
-  line-height: 1.5;
-}
-
 .box-guardia {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
-  margin-top: 2%;
-  padding: 2%;
-  border-radius: 30px;
-}
-
-.formulario-guardia {
+  max-width: 900px;
   width: 90%;
-}
-
-.formulario-guardia fieldset {
-  margin-bottom: 1%;
-  padding: 2%;
-  border: 2px solid var(--beige-medium);
+  margin: 0 auto;
+  padding: 0 2rem;
   border-radius: 30px;
-  background-color: var(--secondary-light);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.caja-guardia:hover {
-  transform: scale(1.02);
-  transition: 0.3s ease-in-out;
-}
-
-.formulario-guardia legend {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--primary-dark);
+.fieldset-guardia {
+  max-width: 1200px;
   margin-bottom: 1%;
+  background-color: var(--secondary-light);
+  border: 2px solid var(--accent-mint);
+  border-radius: 2.5rem;
+  padding: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-.formulario-guardia label {
-  font-size: 1.1rem;
-  font-weight: normal;
-  color: var(--primary-medium);
-  margin-top: 1.5%;
-  display: block;
+.fieldset-guardia:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-lavender);
 }
 
-.formulario-guardia select {
+.legend-icon {
+  width: 70px; /* Tamaño un poco más grande que los emojis originales */
+  height: 70px;
+  vertical-align: middle;
+  margin-right: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.fieldset-guardia:hover .legend-icon {
+  transform: scale(1.1); /* Efecto sutil al hacer hover */
+}
+
+/* Ajustes para la alineación del texto con el icono */
+.formulario-guardia legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-lavender);
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.fieldset-guardia label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--primary-light);
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  min-height: 80px; /* Altura mínima para uniformidad */
+}
+
+.fieldset-guardia label:hover {
+  transform: translateX(3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-guardia {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--neutral-medium);
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
   font-family: "Inter", sans-serif;
   font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
 }
+
 .select-guardia:hover {
-  border: var(--accent-orange) 1px solid;
-  color: var(--accent-orange);
-  transform: scale(1.04);
-  transition: 0.3s;
+  border-color: var(--accent-lavender);
+}
+
+.select-guardia:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 82, 149, 0.3);
 }
 
 .button-recomendacion {
   display: block;
-  margin: 0 auto;
-  background-color: var(--beige-dark);
+  margin: 2rem auto;
+  background-color: var(--neutral-medium);
   color: var(--primary-light);
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
   border: none;
-  padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 3rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  margin-top: 2%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  grid-column: 1 / -1;
 }
 
 .button-recomendacion:hover {
-  background-color: var(--neutral-medium);
-  transition: 0.3s ease;
+  background-color: var(--accent-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .aclaracion-guardia {
-  font-size: 0.9rem;
-  color: var(--primary-medium);
   text-align: center;
-  margin-top: 2.5%;
-  line-height: 1.5;
-  padding: 2%;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--accent-mint);
+  border-radius: 1rem;
+  grid-column: 1 / -1;
+}
+
+/* Modal (se mantiene igual que antes) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: var(--secondary-light);
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--accent-lavender);
+  margin: 0;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: var(--accent-orange);
+}
+
+.modal-body {
+  margin-bottom: 2rem;
+}
+
+.modal-icon {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+.modal-button {
+  background-color: var(--accent-lavender);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: var(--accent-orange);
 }
 
 /*================= Estilos para la sección Búsqueda de centros (search) =============================*/
@@ -1086,9 +1130,6 @@ input[type="radio"]:checked + label.mini-card {
   font-size: clamp(0.5rem, 2vw, 0.7rem);
 }
 
-@media (max-width: 768px) {
-}
-
 /*================== Estilos de la sección Campañas =================================*/
 .grid-campañas {
   display: grid;
@@ -1333,44 +1374,25 @@ input[type="radio"]:checked + label.mini-card {
     line-height: 2rem;
   }
 
-  .guardia p {
-    padding: 1rem;
-    text-align: justify;
-  }
   .box-guardia {
-    padding: 1rem;
-    margin: 0 auto;
-    border-radius: 30px;
-    background-color: var(--secondary-light);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
   }
-  .formulario-guardia {
-    width: 90%;
-    margin: 0 auto;
+  .caja-guardia {
+    width: 100%;
+    max-width: 100%;
   }
-
-  .formulario-guardia fieldset {
-    margin-bottom: 10%;
-    padding: 2%;
-    border: 2px solid var(--beige-medium);
-    border-radius: 30px;
-    background-color: var(--secondary-light);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  .fieldset-content {
+    grid-template-columns: 1fr;
   }
-  .formulario-guardia legend {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-dark);
-    margin-bottom: 1%;
+  .fieldset-guardia legend {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
   }
-  .formulario-guardia label {
-    font-size: 1rem;
-    padding: 1.6%;
-    font-weight: normal;
-    color: var(--primary-medium);
-    margin-top: 1.5%;
-    display: block;
-    line-height: 1.4;
+  .fieldset-guardia label {
+    min-height: auto;
+    margin-bottom: 0.6rem;
+    padding: 0.6rem;
   }
 
   /* search : tarjeta 1 */
@@ -1671,3 +1693,8 @@ input[type="radio"]:checked + label.mini-card {
     font-size: 1rem;
   }
 }
+ @media (min-width: 1200px) {
+    .box-guardia {
+      justify-content: space-between;
+    }
+  }

@@ -46,133 +46,164 @@
         <!-- <h1 class="title">Formulario de contacto</h1> -->
         <div class="formulario-contacto">
           <form action="" method="post" autocomplete="off">
-            <label class="" for="name">Nombre del centro o consultorio:</label>
-            <input
-              class="input"
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Ej: Centro de Salud San Martín"
-            />
+            <div class="tag-form">
+              <label class="" for="name"
+                >Nombre del centro o consultorio:</label
+              >
+              <input
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Ej: Centro de Salud San Martín"
+              />
+            </div>
 
-            <label class="" for="especiality">Especialidades ofrecidas:</label>
-            <select
-              class="input"
-              name="especiality[]"
-              id="especiality"
-              multiple
-              required
-            >
-              <option class="option" value="medicina_general">
-                Medicina General
-              </option>
-              <option class="option" value="pediatria">Pediatría</option>
-              <option class="option" value="ginecologia">Ginecología</option>
-              <option class="option" value="odontologia">Odontología</option>
-              <option class="option" value="psicologia">Psicología</option>
-              <option class="option" value="traumatologia">
-                Traumatología
-              </option>
-              <option class="option" value="cardiologia">Cardiología</option>
-              <option class="option" value="dermatologia">Dermatología</option>
-              <option class="option" value="otorrinolaringologia">
-                Otorrinolaringología
-              </option>
-            </select>
+            <div class="tag-form">
+              <label class="" for="especiality"
+                >Especialidades ofrecidas:</label
+              >
+              <select
+                class="input"
+                name="especiality[]"
+                id="especiality"
+                multiple
+                required
+              >
+                <option class="option" value="medicina_general">
+                  Medicina General
+                </option>
+                <option class="option" value="pediatria">Pediatría</option>
+                <option class="option" value="ginecologia">Ginecología</option>
+                <option class="option" value="odontologia">Odontología</option>
+                <option class="option" value="psicologia">Psicología</option>
+                <option class="option" value="traumatologia">
+                  Traumatología
+                </option>
+                <option class="option" value="cardiologia">Cardiología</option>
+                <option class="option" value="dermatologia">
+                  Dermatología
+                </option>
+                <option class="option" value="otorrinolaringologia">
+                  Otorrinolaringología
+                </option>
+              </select>
+            </div>
 
-            <label for="profesional">Nombre del/los profesionales:</label>
-            <input
-              class="input"
-              type="text"
-              id="profesional"
-              name="profesional "
-              required
-              placeholder="Ej: Dra. Ana Perez, Dr. Juan García"
-            />
+            <div class="tag-form">
+              <label for="profesional">Nombre del/los profesionales:</label>
+              <input
+                class="input"
+                type="text"
+                id="profesional"
+                name="profesional "
+                required
+                placeholder="Ej: Dra. Ana Perez, Dr. Juan García"
+              />
+            </div>
 
-            <label for="direccion">Dirección:</label>
-            <input
-              class="input"
-              type="text"
-              id="direccion"
-              name="direccion"
-              required
-              placeholder="Ej: Calle, Ciudad, Provincia"
-            />
+            <div class="tag-form">
+              <label for="direccion">Dirección:</label>
+              <input
+                class="input"
+                type="text"
+                id="direccion"
+                name="direccion"
+                required
+                placeholder="Ej: Calle, Ciudad, Provincia"
+              />
+            </div>
 
-            <label for="modalidad-atencion">Modalidad de atención:</label>
-            <select
-              class="input"
-              name="modalidad-atencion[]"
-              id="modalidad-atencion"
-              multiple
-              required
-            >
-              <option class="option" value="presencial">Presencial</option>
-              <option class="option" value="telemedicina">Telemedicina</option>
-              <option class="option" value="mixto">Mixto</option>
-            </select>
+            <div class="tag-form">
+              <label for="modalidad-atencion">Modalidad de atención:</label>
+              <select
+                class="input"
+                name="modalidad-atencion[]"
+                id="modalidad-atencion"
+                multiple
+                required
+              >
+                <option class="option" value="presencial">Presencial</option>
+                <option class="option" value="telemedicina">
+                  Telemedicina
+                </option>
+                <option class="option" value="mixto">Mixto</option>
+              </select>
+            </div>
 
-            <label for="dias-atencion">Días y horarios de atención:</label>
-            <input
-              class="input"
-              type="text"
-              id="days"
-              name="days"
-              required
-              placeholder="Ej: Lunes a Viernes de 9 a 18hs, Sábados de 9 a 13hs"
-            />
+            <div class="tag-form">
+              <label for="dias-atencion">Días y horarios de atención:</label>
+              <input
+                class="input"
+                type="text"
+                id="days"
+                name="days"
+                required
+                placeholder="Ej: Lunes a Viernes de 9 a 18hs, Sábados de 9 a 13hs"
+              />
+            </div>
 
-            <label for="obras-sociales">Obras sociales aceptadas:</label>
-            <input
-              class="input"
-              type="text"
-              id="obras-sociales"
-              name="obras-sociales"
-              required
-              placeholder="Ej: PAMI, OSDE, IOMA, etc."
-            />
+            <div class="tag-form">
+              <label for="obras-sociales">Obras sociales aceptadas:</label>
+              <input
+                class="input"
+                type="text"
+                id="obras-sociales"
+                name="obras-sociales"
+                required
+                placeholder="Ej: PAMI, OSDE, IOMA, etc."
+              />
+            </div>
 
-            <label for="telefono">Teléfono de contacto:</label>
-            <input
-              class="input"
-              type="tel"
-              id="telefono"
-              name="telefono"
-              placeholder="Ej: 011 1234-5678"
-            />
+            <div class="tag-form">
+              <label for="telefono">Teléfono de contacto:</label>
+              <input
+                class="input"
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="Ej: 011 1234-5678"
+              />
+            </div>
 
-            <label for="email">Correo electrónico:</label>
-            <input
-              class="input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Ej: contacto@centrosalud.com"
-            />
+            <div class="tag-form">
+              <label for="email">Correo electrónico:</label>
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Ej: contacto@centrosalud.com"
+              />
+            </div>
 
-            <label class="" for="website">Página web o redes sociales:</label>
-            <input
-              class="input"
-              type="url"
-              id="website"
-              name="website"
-              placeholder="Ej: https://www.centrosalud.com o https://www.instagram.com/centrosalud"
-            />
+            <div class="tag-form">
+              <label class="" for="website">Página web o redes sociales:</label>
+              <input
+                class="input"
+                type="url"
+                id="website"
+                name="website"
+                placeholder="Ej: https://www.centrosalud.com o https://www.instagram.com/centrosalud"
+              />
+            </div>
 
-            <label class="" for="message"
-              >Breve descripción o mensaje adicional:</label
-            ><br />
-            <textarea
-              class="input"
-              id="message"
-              name="message"
-              rows="5"
-              cols="63"
-              placeholder="Contanos algo más sobre tu centro, especialidades, etc."
-              required
-            ></textarea>
+            <div class="tag-form">
+              <label class="" for="message"
+                >Breve descripción o mensaje adicional:</label
+              ><br />
+              <textarea
+                class="input"
+                id="message"
+                name="message"
+                rows="5"
+                cols="63"
+                placeholder="Contanos algo más sobre tu centro, especialidades, etc."
+                required
+              ></textarea>
+            </div>
+
             <div class="consentimiento">
               <label for="consentimiento" class="consentimiento"
                 >Acepto que los datos proporcionados sean utilizados con fines

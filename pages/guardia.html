@@ -13,47 +13,49 @@
 
   <body>
     <header>
-        <div class="container nav-container">
-            <h1 class="header-title">Salud a Mano</h1>
-          
-          <!-- Checkbox para controlar el menú -->
-          <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-          <label for="menu-toggle" class="menu-toggle">☰</label>
-    
-          <nav class="nav-links">
-            <ul>
-              <li><a href="../index.html">Inicio</a></li>
-              <li><a href="campañas.html">Campañas</a></li>
-              <li><a href="search.html">Centros y Turnos</a></li>
-              <li><a href="guardia.html">¿Guardia Sí o No?</a></li>
-              <li><a href="contact.html">Sumate</a></li>
-            </ul>
-          </nav>
-        </div>             
+      <div class="container nav-container">
+        <h1 class="header-title">Salud a Mano</h1>
+
+        <!-- Checkbox para controlar el menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+        <label for="menu-toggle" class="menu-toggle">☰</label>
+
+        <nav class="nav-links">
+          <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="campañas.html">Campañas</a></li>
+            <li><a href="search.html">Centros y Turnos</a></li>
+            <li><a href="guardia.html">¿Guardia Sí o No?</a></li>
+            <li><a href="contact.html">Sumate</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section class="hero-pages">
-    <div class="hero-pages-container hero-all-pages">
-      <h2>¿Debo ir a la guardia?</h2>
-      <p>Te ayudamos a decidir si necesitás atención médica urgente o si podés cuidarte en casa. Completá el siguiente cuestionario con respuestas de Sí o No y obtené una recomendación orientativa.</p>
-
-    </div>
-  </section>
+      <div class="hero-pages-container hero-all-pages">
+        <h2>¿Debo ir a la guardia?</h2>
+        <p>
+          Te ayudamos a decidir si necesitás atención médica urgente o si podés
+          cuidarte en casa. Completá el siguiente cuestionario con respuestas de
+          Sí o No y obtené una recomendación orientativa.
+        </p>
+      </div>
+    </section>
 
     <main>
-      <div class="guardia">
-        <!-- <h2 class="">¿Debo ir a la guardia?</h2>
-        <p>
-          Responda las siguientes preguntas con <strong>Sí</strong> o
-          <strong>No</strong>. Al final obtendrá una recomendación orientativa.
-        </p> -->
-      </div>
-
       <div class="box-guardia">
-        <form name="formulario-guardia" class="formulario-guardia" >
+        <form name="formulario-guardia" class="formulario-guardia">
           <div class="caja-guardia">
             <fieldset class="fieldset-guardia">
-              <legend>🩺 Sección 1: Signos de alarma</legend>
+              <legend>
+                <img
+                  src="../assets/img/estetoscopio.png"
+                  alt="Signos de alarma"
+                  class="legend-icon"
+                />
+                Sección 1: Signos de alarma
+              </legend>
               <label
                 >1. ¿Tenés fiebre mayor a 38.5°C por más de 48 horas?
                 <select class="select-guardia" name="alarma1">
@@ -114,8 +116,15 @@
           </div>
 
           <div class="caja-guardia">
-            <fieldset>
-              <legend>🤧 Sección 2: Síntomas leves</legend>
+            <fieldset class="fieldset-guardia">
+              <legend>
+                <img
+                  src="../assets/img/Cruz_sin_fondo.png"
+                  alt="Signos de alarma"
+                  class="legend-icon"
+                />
+                Sección 2: Síntomas leves
+              </legend>
               <label
                 >1. ¿Congestión nasal o secreción?
                 <select class="select-guardia" name="leve1">
@@ -158,13 +167,21 @@
             </fieldset>
           </div>
 
-          <button onclick="evaluarFormulario()" class="button-recomendacion" type="button">Ver recomendación</button>
+          <button
+            onclick="evaluarFormulario()"
+            class="button-recomendacion"
+            type="button"
+          >
+            Ver recomendación
+          </button>
 
-          
           <div id="resultado" class="resultado"></div>
-          <p class="aclaracion-guardia">📝 <strong> Aclaración importante:</strong>
-Este formulario es solo una herramienta orientativa y no reemplaza una consulta médica. Si tenés dudas, síntomas graves o empeoramiento, no dudes en acudir al sistema de salud.</p>
-
+          <p class="aclaracion-guardia">
+            📝 <strong> Aclaración importante:</strong> Este formulario es solo
+            una herramienta orientativa y no reemplaza una consulta médica. Si
+            tenés dudas, síntomas graves o empeoramiento, no dudes en acudir al
+            sistema de salud.
+          </p>
         </form>
       </div>
     </main>
@@ -185,6 +202,6 @@ Este formulario es solo una herramienta orientativa y no reemplaza una consulta 
         </p>
       </div>
     </footer>
-    <script src="../assets/js/scriptguardia.js"></script> 
+    <script src="../assets/js/scriptguardia.js"></script>
   </body>
 </html>
