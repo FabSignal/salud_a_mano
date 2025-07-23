@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Ciclo Menstrual</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style_app.css">
+</head>
+<body>
+  <header>
+    <h1><span class="icon"><img src="./assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola  <span id="userName"></span>! ¿Cómo te sentís hoy?</h1>
+    <p class="subtitle">Cuidarte empieza por conocerte. ¡Registrá tu ciclo!</p>
+  </header>
+
+<div class="user-menu">
+    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+    <div class="user-dropdown" hidden>
+      <button id="logout-btn">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <!-- Modal de autenticación -->
+<div id="auth-modal" class="modal" hidden>
+  <div class="modal-content">
+    <div class="modal-tabs">
+      <button class="tab-btn active" data-tab="login">Iniciar Sesión</button>
+      <button class="tab-btn" data-tab="register">Registrarse</button>
+    </div>
+    
+    <!-- Formulario de Login -->
+    <form id="login-form" class="auth-form active">
+      <div class="form-group">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Contraseña</label>
+        <input type="password" id="login-password" required>
+      </div>
+      <button type="submit">Ingresar</button>
+    </form>
+    
+    <!-- Formulario de Registro -->
+    <form id="register-form" class="auth-form">
+      <div class="form-group">
+        <label for="register-name">Nombre</label>
+        <input type="text" id="register-name" required>
+      </div>
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" required>
+      </div>
+      <div class="form-group">
+        <label for="register-password">Contraseña</label>
+        <input type="password" id="register-password" required>
+      </div>
+      <button type="submit">Registrarme</button>
+    </form>
+  </div>
+</div>
+
+  
+
+  <main>
+    <div class="card-container">
+      <section class="card">
+        <h2><span class="icon"><img src="./assets/img/nuevo_ciclo.png" alt="Nuevo ciclo" class="icon-img"></span> Nuevo ciclo</h2>
+        <form id="form-ciclo" class="multi-step-form">
+          <div class="form-card active">
+            <div class="form-group">
+              <label for="fecha"><img src="./assets/img/calendario.png" alt="Calendario" class="icon-img"> Fecha de inicio</label>
+              <input type="date" id="fecha" required />
+            </div>
+            <div class="btn-container">
+              <button type="button" class="next-btn">Siguiente</button>
+            </div>
+            <div class="form-indicator">
+              <div class="indicator-dot active"></div>
+              <div class="indicator-dot"></div>
+              <div class="indicator-dot"></div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-group">
+              <label for="duracion"><img src="./assets/img/reloj.png" alt="Reloj" class="icon-img"> Duración del sangrado (días)</label>
+              <input type="number" id="duracion" min="1" max="15" required />
+            </div>
+            <div class="btn-container">
+              <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
+              <button type="button" class="next-btn">Siguiente</button>
+            </div>
+            <div class="form-indicator">
+              <div class="indicator-dot"></div>
+              <div class="indicator-dot active"></div>
+              <div class="indicator-dot"></div>
+            </div>
+          </div>
+
+          <div class="form-card">
+            <div class="form-group">
+              <label for="sintomas"><img src="./assets/img/sintomas.png" alt="Síntomas" class="icon-img"> Síntomas (opcional)</label>
+              <textarea id="sintomas" rows="3" placeholder="Describí cómo te sentiste..."></textarea>
+            </div>
+            <div class="btn-container">
+              <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Anterior</button>
+              <button type="submit"><i class="fas fa-check-circle"></i> Finalizar</button>
+            </div>
+            <div class="form-indicator">
+              <div class="indicator-dot"></div>
+              <div class="indicator-dot"></div>
+              <div class="indicator-dot active"></div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2><span class="icon"><img src="./assets/img/gota.png" alt="Ciclos registrados" class="icon-img"></i></span> Mis ciclos registrados</h2>
+        <ul id="lista-ciclos">
+          <div class="empty-state">
+            <img src="./assets/img/agenda.png" alt="Registro" class="icon-img">
+            <h3>Aún no tenés ciclos registrados</h3>
+            <p>Así se verá tu historial personal.</p>
+            <p>¡Agregá tu primer ciclo para comenzar tu seguimiento!</p> 
+          </div>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Predicciones -->
+<section id="predictions-stats-section" class="card">
+  <h2><span class="icon"><img src="./assets/img/predicciones.png" alt="Predicciones" class="icon-img"></span> Estado de tu ciclo</h2>
+  
+  <div id="predictions-stats-container" class="cycle-status-grid">
+    <!-- Las minitarjetas se generarán dinámicamente -->
+  </div>
+</section>
+
+<!-- Sección completa de insights -->
+<section id="insights-section" class="card insights-card">
+  <h2><span class="icon"><img src="./assets/img/insights.png" alt="Insights" class="icon-img"></span> Insights y recomendaciones</h2>
+  
+  <div id="insights-content" class="insights-grid">
+    <!-- Insights generados dinámicamente -->
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - App Ciclo Menstrual | Diseñado con <i class="fas fa-heart" style="color: var(--accent-pink);"></i> para tu bienestar</p>
+    <p class="app-version">por Salud a Mano</p>
+  </footer>
+
+
+  <script src="../assets/js/script_app.js"></script>
+</body>
+</html>
