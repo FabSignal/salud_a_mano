@@ -3,24 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>App Ciclo Menstrual</title>
+  <title>Registrá tu Ciclo Menstrual</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style_app.css">
 </head>
 <body>
   <header>
-    <h1><span class="icon"><img src="../assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola  <span id="userName"></span>! ¿Cómo te sentís hoy?</h1>
+    <h1><span class="icon"><img src="../assets/img/luna_1.png" alt="Luna" class="icon-img"></span> ¡Hola  <span id="userName"></span>! ¿Cómo te sentís hoy?</h1>
     <p class="subtitle">Cuidarte empieza por conocerte. ¡Registrá tu ciclo!</p>
   </header>
-
- <!--  <header>
-    <div class="header-content">
-      <div>
-    <h1><span class="icon"><img src="./assets/img/luna.png" alt="Luna" class="icon-img"></span> ¡Hola 'nombre'!¿Cómo te sentís hoy?</h1>
-    <p class="subtitle">Cuidarte empieza por conocerte. ¡Registrá tu ciclo!</p>
-    </div>
-  </div>
-</header> -->
 
 <div class="user-menu">
     <button class="user-icon"><i class="fas fa-user-circle"></i></button>
@@ -127,14 +118,18 @@
 
       <section class="card">
         <h2><span class="icon"><img src="../assets/img/gota.png" alt="Ciclos registrados" class="icon-img"></i></span> Mis ciclos registrados</h2>
-        <ul id="lista-ciclos">
-          <div class="empty-state">
-            <img src="../assets/img/agenda.png" alt="Registro" class="icon-img">
-            <h3>Aún no tenés ciclos registrados</h3>
-            <p>Así se verá tu historial personal.</p>
-            <p>¡Agregá tu primer ciclo para comenzar tu seguimiento!</p> 
-          </div>
-        </ul>
+        <div class="cycle-list-container">  
+          <ul id="lista-ciclos">
+            <template id="template-empty-state">
+              <div class="empty-state">
+                <img src="../assets/img/agenda.png" alt="Registro" class="icon-img">
+                <h3>Aún no tenés ciclos registrados</h3>
+                <p>Así se verá tu historial personal.</p>
+                <p>¡Agregá tu primer ciclo para comenzar tu seguimiento!</p> 
+              </div>        
+            </template>
+          </ul>
+         </div> 
       </section>
     </div>
 
@@ -159,7 +154,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 - App Ciclo Menstrual | Diseñado con <i class="fas fa-heart" style="color: var(--accent-pink);"></i> para tu bienestar</p>
+    <p>&copy; 2025 - App Ciclo Menstrual | Diseñado con el <i class="fas fa-heart" style="color: var(--accent-pink);"></i> para tu bienestar</p>
     <p class="app-version">por Salud a Mano</p>
   </footer>
 
